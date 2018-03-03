@@ -28,7 +28,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
     }
     
-    let gregorian: Calendar = Calendar(identifier: .gregorian)
+    let japanese: Calendar = Calendar(identifier: .japanese)
     
     var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -39,7 +39,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     //祝日判定を行い結果を返すメソッド(True: 祝日)
     func judgeHoliday(_ date: Date) -> Bool {
         // 祝日判定用にカレンダークラスのインスタンス
-        let tmpCalender = Calendar(identifier: .gregorian)
+        let tmpCalender = Calendar(identifier: .japanese)
         
         //祝日判定を行う日にちの年、月、日を取得
         let year = tmpCalender.component(.year, from: date)
@@ -53,7 +53,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     //date型 -> 年月日をIntで取得
     func getDay(_ date:Date) -> (Int,Int,Int){
-        let tmpCalendar = Calendar(identifier: .gregorian)
+        let tmpCalendar = Calendar(identifier: .japanese)
         let year = tmpCalendar.component(.year, from: date)
         let month = tmpCalendar.component(.month, from: date)
         let day = tmpCalendar.component(.day, from: date)
@@ -63,7 +63,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     //曜日判定(日曜日:1 〜 土曜日:7)
     func getWeekIdx(_ date: Date) -> Int{
-        let tmpCalendar = Calendar(identifier: .gregorian)
+        let tmpCalendar = Calendar(identifier: .japanese)
         return tmpCalendar.component(.weekday, from: date)
         
         
@@ -94,9 +94,18 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
                   at monthPosition: FSCalendarMonthPosition){
         
         let selectDay = getDay(date)
+        
+        performsegueToMealView()
+        
+        
+        
     }
     
-    
+    //segueの設定
+    func performsegueToMealView() {
+        performSegue(withIdentifier: "toMealView", sender: nil)
+        
+    }
     
     
     override func didReceiveMemoryWarning() {

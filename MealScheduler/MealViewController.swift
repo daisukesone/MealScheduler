@@ -25,6 +25,15 @@ class MealViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func choiceMeal(sender: UIButton){
+        performSegueToPhotoView()
+    }
+    
+    func performSegueToPhotoView() {
+        performSegue(withIdentifier: "toPhotoView", sender: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

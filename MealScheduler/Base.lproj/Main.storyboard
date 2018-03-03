@@ -35,6 +35,7 @@
                     <navigationItem key="navigationItem" id="jSA-ME-3kF"/>
                     <connections>
                         <outlet property="calendar" destination="Ino-yT-QS4" id="mxr-Hy-4Pk"/>
+                        <segue destination="CRj-WU-iLe" kind="show" identifier="toMealView" id="gCc-6z-Brj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,10 +50,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-4n-qXn">
-                                <rect key="frame" x="106" y="134" width="162" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-4n-qXn">
+                                <rect key="frame" x="106" y="168" width="162" height="78"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="agZ-ZO-rjX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="あさごはん">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,10 +65,12 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choiceMealWithSender:" destination="CRj-WU-iLe" eventType="touchUpInside" id="YJ8-kh-rlq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Xx-7fG">
-                                <rect key="frame" x="90" y="269" width="194" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEA-Xx-7fG">
+                                <rect key="frame" x="90" y="294" width="194" height="78"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="おひるごはん">
@@ -76,10 +81,12 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choiceMealWithSender:" destination="CRj-WU-iLe" eventType="touchUpInside" id="0qH-Ee-cVm"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGj-oe-vTk">
-                                <rect key="frame" x="106" y="423" width="162" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGj-oe-vTk">
+                                <rect key="frame" x="106" y="424" width="162" height="78"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="ばんごはん">
@@ -90,11 +97,27 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="choiceMealWithSender:" destination="CRj-WU-iLe" eventType="touchUpInside" id="z89-DF-Pav"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98775501943005184" green="0.7094007223982991" blue="0.55982569683355676" alpha="0.40212367957746481" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JGj-oe-vTk" firstAttribute="top" secondItem="tEA-Xx-7fG" secondAttribute="bottom" constant="52" id="M5r-P4-d7Q"/>
+                            <constraint firstItem="rdu-4n-qXn" firstAttribute="leading" secondItem="JGj-oe-vTk" secondAttribute="leading" id="N85-nA-K3h"/>
+                            <constraint firstItem="rdu-4n-qXn" firstAttribute="centerX" secondItem="tEA-Xx-7fG" secondAttribute="centerX" id="Uud-UD-f9k"/>
+                            <constraint firstItem="rdu-4n-qXn" firstAttribute="centerX" secondItem="JYW-bC-ijH" secondAttribute="centerX" id="Y8W-Za-rjo"/>
+                            <constraint firstItem="rdu-4n-qXn" firstAttribute="top" secondItem="A3Y-KA-NSZ" secondAttribute="top" constant="104" id="j2A-tC-WPr"/>
+                            <constraint firstItem="tEA-Xx-7fG" firstAttribute="top" secondItem="rdu-4n-qXn" secondAttribute="bottom" constant="48" id="vvL-ep-ffr"/>
+                            <constraint firstItem="A3Y-KA-NSZ" firstAttribute="bottom" secondItem="JGj-oe-vTk" secondAttribute="bottom" constant="165" id="xup-zG-w7X"/>
+                            <constraint firstItem="tEA-Xx-7fG" firstAttribute="centerY" secondItem="JYW-bC-ijH" secondAttribute="centerY" id="xvd-eF-v76"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="A3Y-KA-NSZ"/>
                     </view>
+                    <connections>
+                        <segue destination="nh1-li-Tqr" kind="presentation" identifier="toPhotoView" id="nmz-IC-kTG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vS-Am-7aO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
