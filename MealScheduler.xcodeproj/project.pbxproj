@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023910A3204807DA0015EF0A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023910A2204807DA0015EF0A /* MealViewController.swift */; };
+		023910A5204808030015EF0A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023910A4204808030015EF0A /* PhotoViewController.swift */; };
 		02D167AB2046CFDC00CD4AD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D167AA2046CFDC00CD4AD9 /* AppDelegate.swift */; };
 		02D167AD2046CFDC00CD4AD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D167AC2046CFDC00CD4AD9 /* ViewController.swift */; };
 		02D167B02046CFDC00CD4AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D167AE2046CFDC00CD4AD9 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023910A2204807DA0015EF0A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		023910A4204808030015EF0A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		02D167A72046CFDC00CD4AD9 /* MealScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D167AA2046CFDC00CD4AD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D167AC2046CFDC00CD4AD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				02D167B12046CFDC00CD4AD9 /* Assets.xcassets */,
 				02D167B32046CFDC00CD4AD9 /* LaunchScreen.storyboard */,
 				02D167B62046CFDC00CD4AD9 /* Info.plist */,
+				023910A2204807DA0015EF0A /* MealViewController.swift */,
+				023910A4204808030015EF0A /* PhotoViewController.swift */,
 			);
 			path = MealScheduler;
 			sourceTree = "<group>";
@@ -469,7 +475,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D167AD2046CFDC00CD4AD9 /* ViewController.swift in Sources */,
+				023910A5204808030015EF0A /* PhotoViewController.swift in Sources */,
 				02D167AB2046CFDC00CD4AD9 /* AppDelegate.swift in Sources */,
+				023910A3204807DA0015EF0A /* MealViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
