@@ -12,7 +12,10 @@ import RealmSwift
 
 class MealViewController: UIViewController {
     
+    //Realmを使う
+    let photo = Photo()
     
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,16 @@ class MealViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //ボタンを押したときの操作
     @IBAction func choiceMeal(sender: UIButton){
+        
+        //
+        if let takenPhoto = realm.object(Photo) {
+        
         performSegueToPhotoView()
+    } else {
+        performSegueToResultView()
+    }
     }
     
     func performSegueToPhotoView() {
@@ -52,3 +63,4 @@ class MealViewController: UIViewController {
     */
 
 }
+

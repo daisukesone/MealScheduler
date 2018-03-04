@@ -86,7 +86,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                         
                                         //Realmに書き込む
                                         try! self.realm.write {
-                                            self.realm.add(self.photo)
+                                            self.realm.add(self.photo, update: true)
                                         }
                                         
                                         //写真アルバムに保存

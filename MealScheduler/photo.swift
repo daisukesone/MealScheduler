@@ -24,7 +24,7 @@ class Photo: Object {
     @objc dynamic var date: NSDate!
     
     
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+//    override static func primaryKey() -> String? {
+//        return "id"
+//    }
 }
