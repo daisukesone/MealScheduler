@@ -34,10 +34,10 @@ class MealViewController: UIViewController {
     @IBAction func choiceMeal(sender: UIButton){
         
         
-        let takenPhoto = realm.object(ofType: Photo.self, forPrimaryKey: "id")
+        let takenPhoto = realm.object(ofType: Photo.self, forPrimaryKey: "id")!
         
         //idが0のときとそれ以外で場合分け
-        if takenPhoto?.id == 0{
+        if takenPhoto.id == 0{
         
             
         performSegueToPhotoView()
