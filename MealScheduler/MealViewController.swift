@@ -35,7 +35,8 @@ class MealViewController: UIViewController {
         
         
        
-        if let photos = realm.objects(Photo.self).filter("id = 1").sorted(byKeyPath: "id")) {
+        if let photos = realm.objects(Photo.self).filter("id = 1").sorted(byKeyPath: "id"){
+            
             
             performSegueToResultView()
             
