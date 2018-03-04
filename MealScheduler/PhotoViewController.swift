@@ -81,6 +81,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                             self.photo.id = 1
                                             self.photo.picture = pngImage as NSData
                                             
+                                        
                                         }
                                         
                                         
@@ -91,10 +92,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                         
                                         //写真アルバムに保存
                                         UIImageWriteToSavedPhotosAlbum(self.cameraImageView.image!, nil, nil, nil)
-                                        
-                                        
-                                        
-        }
+                                        }
             )
         )
         //キャンセルボタン
@@ -107,9 +105,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
             )
         )
         
-        
-        
-       
+        //アラートの表示
+        present(alert,animated: true,completion: nil)
     }
     
                                         

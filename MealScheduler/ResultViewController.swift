@@ -12,9 +12,20 @@ import RealmSwift
 class ResultViewController: UIViewController {
     
     @IBOutlet var resultImageView: UIImageView!
+    
+    let photo = Photo()
+    
+    let realm = try! Realm()
+    
+   // var photos = realm.objects(Photo).filter("id = 1").sorted(byKeyPath: "id")
+    
+    var resultImageview = photos
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
 
         // Do any additional setup after loading the view.
     }

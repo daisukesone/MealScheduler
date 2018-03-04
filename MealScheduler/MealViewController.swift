@@ -34,17 +34,15 @@ class MealViewController: UIViewController {
     @IBAction func choiceMeal(sender: UIButton){
         
         
-        let takenPhoto = realm.object(ofType: Photo.self, forPrimaryKey: "id")!
-        
-        //idが0のときとそれ以外で場合分け
-        if takenPhoto.id == 0{
-        
+       
+        if let photos = realm.objects(Photo.self).filter("id = 1").sorted(byKeyPath: "id")) {
             
-        performSegueToPhotoView()
+            performSegueToResultView()
+            
         } else {
+             performSegueToPhotoView()
+       }
         
-        performSegueToResultView()
-        }
     }
     
     func performSegueToPhotoView() {
@@ -54,6 +52,8 @@ class MealViewController: UIViewController {
     func performSegueToResultView() {
         performSegue(withIdentifier: "toResultView", sender: nil)
     }
+        
+    
     
     
 
