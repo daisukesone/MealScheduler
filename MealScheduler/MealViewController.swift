@@ -33,14 +33,18 @@ class MealViewController: UIViewController {
     //ボタンを押したときの操作
     @IBAction func choiceMeal(sender: UIButton){
         
-        //
-        if let takenPhoto = realm.object(ofType: photo, forPrimaryKey: id) {
+        
+        let takenPhoto = realm.object(ofType: Photo.self, forPrimaryKey: "id")
+        
+        //idが0のときとそれ以外で場合分け
+        if takenPhoto?.id == 0{
         
             
         performSegueToPhotoView()
-    } else {
+        } else {
+        
         performSegueToResultView()
-    }
+        }
     }
     
     func performSegueToPhotoView() {
