@@ -34,8 +34,9 @@ class MealViewController: UIViewController {
     @IBAction func choiceMeal(sender: UIButton){
         
         //
-        if let takenPhoto = realm.object(Photo) {
+        if let takenPhoto = realm.object(ofType: photo, forPrimaryKey: id) {
         
+            
         performSegueToPhotoView()
     } else {
         performSegueToResultView()
@@ -63,4 +64,5 @@ class MealViewController: UIViewController {
     */
 
 }
+
 

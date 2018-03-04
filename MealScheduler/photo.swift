@@ -17,6 +17,7 @@ class Album: Object {
     let photos = List<Photo>()
 }
 
+//写真のモデルクラス
 class Photo: Object {
     
     @objc dynamic var id = 0
@@ -24,7 +25,7 @@ class Photo: Object {
     @objc dynamic var date: NSDate!
     
     
-//    override static func primaryKey() -> String? {
-//        return "id"
-//    }
+    override static func primaryKey() -> String? {
+        return "id"
+   }
 }
