@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet var cameraImageView: UIImageView!
+    
+    //Realmを使う
+    let photo = Photo()
+    
+    let realm = try! Realm()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +61,6 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     //保存するときのメソッド
     @IBAction func save(){
         
-        UIImageWriteToSavedPhotosAlbum(cameraImageView.image!, nil, nil, nil)
-        
         //アラートを表示する
         let alert: UIAlertController = UIAlertController(title: "保存",
                                                          message: "画像を保存します",
@@ -66,9 +71,31 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                       style: .default,
                                       handler: { action in
                                         //ボタンが押された時の動作
-                                        print("OKボタンが押されました")
-                                                }
-                                     )
+                                        //写真をPNG形式に変換
+                                        let _image = self.cameraImageView.image!
+                                        
+                                        if let pngImage = UIImagePNGRepresentation(_image) {
+                                            
+                                            
+                                            
+                                            self.photo.id = 1
+                                            self.photo.picture = pngImage as NSData
+                                            
+                                        }
+                                        
+                                        
+                                        //Realmに書き込む
+                                        try! self.realm.write {
+                                            self.realm.add(self.photo)
+                                        }
+                                        
+                                        //写真アルバムに保存
+                                        UIImageWriteToSavedPhotosAlbum(self.cameraImageView.image!, nil, nil, nil)
+                                        
+                                        
+                                        
+        }
+            )
         )
         //キャンセルボタン
         alert.addAction(UIAlertAction(title: "キャンセル",
@@ -76,9 +103,13 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                       handler: {action in
                                         print("キャンセル")
                                         
-                                                }
-                                      )
+        }
+            )
         )
+        
+        
+        
+       
     }
     
                                         

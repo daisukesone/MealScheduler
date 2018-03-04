@@ -1,23 +1,20 @@
 //
-//  MealViewController.swift
+//  ResultViewController.swift
 //  MealScheduler
 //
-//  Created by 曽根大輔 on 2018/03/01.
+//  Created by 曽根大輔 on 2018/03/03.
 //  Copyright © 2018年 曽根大輔. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-
-class MealViewController: UIViewController {
+class ResultViewController: UIViewController {
     
-    
+    @IBOutlet var resultImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -26,19 +23,6 @@ class MealViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func choiceMeal(sender: UIButton){
-        performSegueToPhotoView()
-    }
-    
-    func performSegueToPhotoView() {
-        performSegue(withIdentifier: "toPhotoView", sender: nil)
-    }
-    
-    func performSegueToResultView() {
-        performSegue(withIdentifier: "toResultView", sender: nil)
-    }
-    
     
 
     /*
